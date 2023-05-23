@@ -1,0 +1,17 @@
+body {
+  padding: 1rem;
+  background-color: rgba(174, 167, 167, 0.503);
+}
+
+.box {
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 0 0 1rem #00000025 inset;
+  background-color: rgb(255, 255, 255);
+}
+
+.grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
