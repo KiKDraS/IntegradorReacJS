@@ -8,14 +8,10 @@ const Login = () => {
   const { error, loading, setError } = useContext(AuthContext);
 
   useEffect(() => {
-    const showMsg = () => {
-      setTimeout(() => {
+    const showMsg = setTimeout(() => {
         setError({ err: false });
       }, 2000);
-    };
-
-    showMsg();
-
+    
     return () => {
       clearTimeout(showMsg);
     };
