@@ -1,5 +1,3 @@
-//Tipos de acciones => Permiten que el reducer sepa CÓMO modificar el state
-
 export const TYPES = {
   GET_ALL_PRODUCTS: "GET_ALL_PRODUCTS",
   ADD_TO_CART: "ADD_TO_CART",

@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext();
 
-//Valor de State => Perdura en el tiempo siempre y cuando, la página no se recargue ni se cierre
-
 const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState("");
   const [loading, setLoading] = useState(false);
@@ -14,7 +12,6 @@ const AuthProvider = ({ children }) => {
   const url = "https://my-json-server.typicode.com/kikdras/users/all";
 
   const logIn = (userName) => {
-    //En localStorage sólo se pueden guardar datos de tipo string
     localStorage.setItem("userName", JSON.stringify(userName));
     setAuth(userName);
     navigate("/");
@@ -25,13 +22,11 @@ const AuthProvider = ({ children }) => {
     localStorage.removeItem("userName");
   };
 
-  //Función a ejecutarse cuando se monta la app
   const checkPreviousLog = () => {
     const user = JSON.parse(localStorage.getItem("userName"));
     setAuth(user);
   };
 
-  //Función para revisar los datos ingresados en el formulario
   const checkCredentials = (form) => {
     setLoading(true);
     fetch(url)
